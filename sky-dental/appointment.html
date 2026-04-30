@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book an appointment with Dr. Arun Teja at Sky Dental, Nallagandla. Easy online appointment booking for all dental treatments." />
+  <title>Book Appointment | Sky Dental</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header id="navbar-placeholder"></header>
+
+  <main>
+    <!-- ══════════════════════════════════════
+         APPOINTMENT HERO
+    ══════════════════════════════════════ -->
+    <section class="appointment-hero" aria-label="Appointment page header">
+      <div class="container">
+        <div class="hero-tag" style="justify-content:center;margin-bottom:16px;">📅 Easy Online Booking</div>
+        <h1 style="font-family:var(--font-head);font-size:clamp(2rem,4vw,2.8rem);color:var(--white);margin-bottom:12px;">
+          Book Your <span style="color:var(--gold);">Appointment</span>
+        </h1>
+        <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:520px;margin:0 auto;">
+          Fill the form below and we will confirm your appointment via phone or WhatsApp within a few hours.
+        </p>
+        <nav class="breadcrumb" style="margin-top:16px;" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Book Appointment</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         APPOINTMENT FORM
+    ══════════════════════════════════════ -->
+    <section class="appointment-form-section">
+      <div class="container">
+        <div class="appointment-form-grid">
+
+          <!-- ─── FORM CARD ─── -->
+          <div class="form-card reveal">
+            <h2 style="font-family:var(--font-head);font-size:1.5rem;margin-bottom:6px;">
+              Request an <span style="color:var(--gold);">Appointment</span>
+            </h2>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:28px;">
+              Fill in your details and preferred time. We'll confirm shortly.
+            </p>
+
+            <!-- Success / Error Messages -->
+            <div id="form-success" class="alert alert-success alert-hidden" role="alert"></div>
+            <div id="form-error"   class="alert alert-error   alert-hidden" role="alert"></div>
+
+            <!-- Appointment Form -->
+            <form id="appointment-form" novalidate>
+
+              <!-- Hidden fields for FormSubmit.co -->
+              <input type="hidden" name="_subject"  value="Sky Dental — New Appointment Request" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha"  value="false" />
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="appt-name">Full Name <span>*</span></label>
+                <input type="text" id="appt-name" name="Patient Name"
+                       class="form-control" placeholder="e.g. Fathima"
+                       required autocomplete="name" />
+              </div>
+
+              <!-- Phone + Email -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="appt-phone">Phone Number <span>*</span></label>
+                  <input type="tel" id="appt-phone" name="Phone Number"
+                         class="form-control" placeholder="+91 90000 00000"
+                         required autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="appt-email">Email Address</label>
+                  <input type="email" id="appt-email" name="Email Address"
+                         class="form-control" placeholder="you@email.com"
+                         autocomplete="email" />
+                </div>
+              </div>
+
+              <!-- Service Type -->
+              <div class="form-group">
+                <label for="appt-service">Service Required <span>*</span></label>
+                <select id="appt-service" name="Service Required"
+                        class="form-control" required>
+                  <option value="">-- Select a service --</option>
+                  <option value="Cosmetic Dentistry / Smile Makeover">Cosmetic Dentistry / Smile Makeover</option>
+                  <option value="Dental Implants">Dental Implants</option>
+                  <option value="Root Canal Treatment">Root Canal Treatment</option>
+                  <option value="Orthodontics / Braces">Orthodontics / Braces</option>
+                  <option value="Teeth Whitening">Teeth Whitening</option>
+                  <option value="General Dental Check-up">General Dental Check-up</option>
+                  <option value="Crowns & Bridges">Crowns &amp; Bridges</option>
+                  <option value="Gum Treatment">Gum Treatment</option>
+                  <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                  <option value="Dentures">Dentures</option>
+                  <option value="Emergency Dental Care">Emergency Dental Care</option>
+                  <option value="Other">Other / Not Sure</option>
+                </select>
+              </div>
+
+              <!-- Date + Time -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="appt-date">Preferred Date <span>*</span></label>
+                  <input type="date" id="appt-date" name="Preferred Date"
+                         class="form-control" required />
+                </div>
+                <div class="form-group">
+                  <label for="appt-time">Preferred Time <span>*</span></label>
+                  <select id="appt-time" name="Preferred Time"
+                          class="form-control" required>
+                    <option value="">-- Select time --</option>
+                    <option value="9:00 AM – 10:00 AM">9:00 AM – 10:00 AM</option>
+                    <option value="10:00 AM – 11:00 AM">10:00 AM – 11:00 AM</option>
+                    <option value="11:00 AM – 12:00 PM">11:00 AM – 12:00 PM</option>
+                    <option value="12:00 PM – 1:00 PM">12:00 PM – 1:00 PM</option>
+                    <option value="2:00 PM – 3:00 PM">2:00 PM – 3:00 PM</option>
+                    <option value="3:00 PM – 4:00 PM">3:00 PM – 4:00 PM</option>
+                    <option value="4:00 PM – 5:00 PM">4:00 PM – 5:00 PM</option>
+                    <option value="5:00 PM – 6:00 PM">5:00 PM – 6:00 PM</option>
+                    <option value="6:00 PM – 7:00 PM">6:00 PM – 7:00 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message / Symptoms -->
+              <div class="form-group">
+                <label for="appt-message">Symptoms / Message</label>
+                <textarea id="appt-message" name="Symptoms or Message"
+                          class="form-control" rows="4"
+                          placeholder="Describe your symptoms or dental concerns (optional)…"></textarea>
+              </div>
+
+              <!-- Referral source (optional) -->
+              <div class="form-group">
+                <label for="appt-referral">How Did You Hear About Us?</label>
+                <select id="appt-referral" name="Referral Source" class="form-control">
+                  <option value="">-- Select --</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Friend or Family Recommendation">Friend / Family</option>
+                  <option value="Social Media">Social Media (Instagram / Facebook)</option>
+                  <option value="Walking by the Clinic">Walked past the clinic</option>
+                  <option value="Justdial / Practo">Justdial / Practo</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Terms note -->
+              <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:20px;">
+                By submitting this form, you agree to be contacted by Sky Dental to confirm your appointment.
+                Your information is kept strictly confidential.
+              </p>
+
+              <button type="submit" class="btn btn-primary w-100 btn-lg" id="submit-btn">
+                📅 Submit Appointment Request
+              </button>
+            </form>
+          </div>
+
+          <!-- ─── INFO SIDEBAR ─── -->
+          <div class="reveal reveal-delay-2">
+
+            <!-- Info Card -->
+            <div class="appt-info-card">
+              <h3>📋 Appointment Info</h3>
+
+              <div class="appt-info-item">
+                <div class="icon">📍</div>
+                <div>
+                  <h4>Clinic Address</h4>
+                  <p>Sky Dental, 2-898/8, Tellapur Rd, Gachibowil, Nallagandla, Telangana 500046</p>
+                </div>
+              </div>
+
+              <div class="appt-info-item">
+                <div class="icon">📞</div>
+                <div>
+                  <h4>Phone / WhatsApp</h4>
+                  <p><a href="tel:+919000000000" style="color:var(--gold-light);">+91 90000 00000</a></p>
+                </div>
+              </div>
+
+              <div class="appt-info-item">
+                <div class="icon">📧</div>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:info@skydental.in" style="color:var(--gold-light);">info@skydental.in</a></p>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <h3 style="margin-top:28px;margin-bottom:16px;color:var(--gold);">🕐 Clinic Hours</h3>
+              <table class="hours-table">
+                <tr><td>Monday – Friday</td><td>9:00 AM – 7:00 PM</td></tr>
+                <tr><td>Saturday</td><td>9:00 AM – 5:00 PM</td></tr>
+                <tr><td>Sunday</td><td>10:00 AM – 2:00 PM</td></tr>
+              </table>
+
+              <!-- Note -->
+              <div style="background:rgba(255,255,255,0.08);border-radius:var(--radius-sm);padding:14px;margin-top:24px;font-size:0.85rem;line-height:1.6;opacity:0.9;">
+                <strong>📌 Note:</strong> This is an online request form. Your appointment will be <strong>confirmed via phone or WhatsApp</strong> within a few hours. For emergencies, please call us directly.
+              </div>
+            </div>
+
+            <!-- Quick Contact Buttons -->
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px;">
+              <a href="tel:+919000000000" class="btn btn-primary btn-lg w-100" style="justify-content:center;">
+                📞 Call Us Directly
+              </a>
+              <a href="https://wa.me/919000000000?text=Hello%20Sky%20Dental%2C%20I%20would%20like%20to%20book%20an%20appointment."
+                 target="_blank" rel="noopener"
+                 class="btn btn-gold btn-lg w-100" style="justify-content:center;">
+                💬 Book via WhatsApp
+              </a>
+            </div>
+
+            <!-- Map -->
+            <div class="map-wrapper" style="margin-top:24px;">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0!2d78.3!3d17.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI3JzAwLjAiTiA3OMKwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                style="height:220px;"
+                title="Sky Dental map"
+                aria-label="Google Map showing Sky Dental location">
+              </iframe>
+              <div class="map-info" style="padding:16px;">
+                <a href="https://maps.google.com/?q=Sky+Dental+Gachibowil+Nallagandla+Telangana"
+                   target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  🗺 Open in Google Maps ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CLINIC LOCATION + CONTACT INFO
+    ══════════════════════════════════════ -->
+    <section style="background:var(--white);padding:80px 0;">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="section-tag">Find Us</div>
+          <h2 class="section-title">Clinic <span>Location & Contact</span></h2>
+          <p class="section-subtitle">Visit us, call us, or WhatsApp us — we're always happy to help.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;align-items:start;" class="location-contact-grid">
+
+          <!-- Contact Info -->
+          <div class="reveal">
+            <!-- Info Cards -->
+            <div style="display:flex;flex-direction:column;gap:16px;">
+
+              <div class="contact-info-card" style="text-align:left;display:flex;align-items:flex-start;gap:16px;">
+                <div class="contact-info-icon" style="flex-shrink:0;">📍</div>
+                <div>
+                  <h3 style="margin-bottom:6px;font-size:1rem;">Our Address</h3>
+                  <p>Sky Dental, 2-898/8, Tellapur Rd,<br>Gachibowil, Nallagandla,<br>Telangana 500046</p>
+                  <a href="https://maps.google.com/?q=Sky+Dental+Gachibowil+Nallagandla+Telangana"
+                     target="_blank" rel="noopener"
+                     class="btn btn-outline btn-sm" style="margin-top:12px;display:inline-flex;">
+                    🗺 Get Directions ↗
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-info-card" style="text-align:left;display:flex;align-items:flex-start;gap:16px;">
+                <div class="contact-info-icon" style="flex-shrink:0;">📞</div>
+                <div>
+                  <h3 style="margin-bottom:6px;font-size:1rem;">Phone & WhatsApp</h3>
+                  <p>
+                    <a href="tel:+919000000000" style="color:var(--blue-mid);font-weight:600;">+91 90000 00000</a><br>
+                    <a href="https://wa.me/919000000000" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600;">💬 Chat on WhatsApp</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-card" style="text-align:left;display:flex;align-items:flex-start;gap:16px;">
+                <div class="contact-info-icon" style="flex-shrink:0;">📧</div>
+                <div>
+                  <h3 style="margin-bottom:6px;font-size:1rem;">Email</h3>
+                  <p><a href="mailto:info@skydental.in" style="color:var(--blue-mid);">info@skydental.in</a></p>
+                </div>
+              </div>
+
+              <div class="contact-info-card" style="text-align:left;display:flex;align-items:flex-start;gap:16px;">
+                <div class="contact-info-icon" style="flex-shrink:0;">🕐</div>
+                <div>
+                  <h3 style="margin-bottom:6px;font-size:1rem;">Clinic Hours</h3>
+                  <table style="width:100%;font-size:0.875rem;border-collapse:collapse;">
+                    <tr style="border-bottom:1px solid var(--gray-100);">
+                      <td style="padding:6px 0;color:var(--text-muted);">Mon – Fri</td>
+                      <td style="text-align:right;font-weight:600;color:var(--blue-mid);">9:00 AM – 7:00 PM</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--gray-100);">
+                      <td style="padding:6px 0;color:var(--text-muted);">Saturday</td>
+                      <td style="text-align:right;font-weight:600;color:var(--blue-mid);">9:00 AM – 5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:6px 0;color:var(--text-muted);">Sunday</td>
+                      <td style="text-align:right;font-weight:600;color:var(--gold);">10:00 AM – 2:00 PM</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-wrapper reveal reveal-delay-2" style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);box-shadow:var(--shadow-sm);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.0!2d78.3!3d17.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI3JzAwLjAiTiA3OMKwMTgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+              width="100%"
+              height="380"
+              style="border:none;display:block;"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Sky Dental on Google Maps"
+              aria-label="Map showing Sky Dental's location">
+            </iframe>
+            <div style="background:var(--white);padding:20px;">
+              <h4 style="font-weight:600;font-size:0.95rem;margin-bottom:8px;">🦷 Sky Dental — Dr. Arun's Clinic</h4>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px;">2-898/8, Tellapur Rd, Gachibowil, Nallagandla, Telangana 500046</p>
+              <a href="https://maps.google.com/?q=Sky+Dental+Gachibowil+Nallagandla+Telangana"
+                 target="_blank" rel="noopener"
+                 class="btn btn-outline btn-sm">Open in Google Maps ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         HOW IT WORKS
+    ══════════════════════════════════════ -->
+    <section style="background:var(--white);padding:72px 0;">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="section-tag">Simple Process</div>
+          <h2 class="section-title">How It <span>Works</span></h2>
+          <p class="section-subtitle">Booking an appointment with Sky Dental is simple and fast.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px;" class="steps-grid">
+          <div style="text-align:center;" class="reveal reveal-delay-1">
+            <div style="width:64px;height:64px;background:rgba(30,80,150,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px;">📝</div>
+            <div style="width:28px;height:28px;background:var(--blue-dark);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;margin:0 auto 12px;">1</div>
+            <h4 style="font-weight:600;margin-bottom:8px;">Fill the Form</h4>
+            <p style="font-size:0.875rem;color:var(--text-muted);">Complete the appointment form with your details and preferred time.</p>
+          </div>
+          <div style="text-align:center;" class="reveal reveal-delay-2">
+            <div style="width:64px;height:64px;background:rgba(232,160,32,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px;">📞</div>
+            <div style="width:28px;height:28px;background:var(--blue-dark);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;margin:0 auto 12px;">2</div>
+            <h4 style="font-weight:600;margin-bottom:8px;">We Confirm</h4>
+            <p style="font-size:0.875rem;color:var(--text-muted);">Our team calls or WhatsApps you within a few hours to confirm the slot.</p>
+          </div>
+          <div style="text-align:center;" class="reveal reveal-delay-3">
+            <div style="width:64px;height:64px;background:rgba(30,80,150,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px;">🏥</div>
+            <div style="width:28px;height:28px;background:var(--blue-dark);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;margin:0 auto 12px;">3</div>
+            <h4 style="font-weight:600;margin-bottom:8px;">Visit the Clinic</h4>
+            <p style="font-size:0.875rem;color:var(--text-muted);">Come to Sky Dental at your scheduled time. No long waits!</p>
+          </div>
+          <div style="text-align:center;" class="reveal reveal-delay-1">
+            <div style="width:64px;height:64px;background:rgba(232,160,32,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px;">😁</div>
+            <div style="width:28px;height:28px;background:var(--blue-dark);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;margin:0 auto 12px;">4</div>
+            <h4 style="font-weight:600;margin-bottom:8px;">Leave Smiling</h4>
+            <p style="font-size:0.875rem;color:var(--text-muted);">Experience expert dental care and leave with your best, healthiest smile!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/appointment.js"></script>
+
+  <style>
+    @media(max-width:768px){
+      .steps-grid { grid-template-columns:repeat(2,1fr) !important; }
+    }
+    @media(max-width:480px){
+      .steps-grid { grid-template-columns:1fr !important; }
+    }
+  </style>
+</body>
+</html>
