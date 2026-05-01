@@ -806,6 +806,7 @@ section { padding: 80px 0; }
   border: 1px solid var(--gray-200);
   transition: var(--transition);
   
+  
 }
 .contact-info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .contact-info-icon {
@@ -819,6 +820,7 @@ section { padding: 80px 0; }
   font-size: 1.5rem;
   margin: 0 auto 18px;
   color: var(--blue-mid);
+  
 }
 .contact-info-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
 .contact-info-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
